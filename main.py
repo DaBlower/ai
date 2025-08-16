@@ -73,7 +73,7 @@ while(True):
 
                 os.system('cls' if os.name == 'nt' else 'clear')
                 
-                print(f"{Fore.BLUE}Using model {data["model"]}{Style.RESET_ALL}")
+                print(f'{Fore.BLUE}Using model {data["model"]}{Style.RESET_ALL}')
                 for message in data["messages"]:
                     if message["role"] == "user":
                         print(f'{Fore.GREEN}Your message: {Style.RESET_ALL}{message["content"]}\n')
