@@ -28,10 +28,10 @@ if data["model"] == "qwen/qwen3-32b":
     while(True):
         think = input(f"{Fore.CYAN}Would you like to show thinking? Y/n {Style.RESET_ALL}")
         if "y" in think.lower():
-            thinking = True
+            data["reasoning_effort"] = "default"
             break
         elif "n" in think.lower():
-            thinking = False
+            data["reasoning_effort"] = "none"
             break
         else:
             continue
@@ -104,9 +104,5 @@ while(True):
 
         except Exception as e:
             print(f"{Fore.RED}Could not access dictionary properly: {Style.RESET_ALL}{e}")
-        if not thinking:
-            clean = re.sub(r'<think>.*?</think>', '', responseContent, flags=re.DOTALL).strip()
-            print(f"\n{clean}\n")
-        else:
-            print(f"\n{responseContent}\n")
+        print(f"\n{responseContent}\n")
         data["messages"].append({"role": "assistant", "content": responseContent})
