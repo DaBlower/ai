@@ -35,7 +35,7 @@ if data["model"] == "qwen/qwen3-32b":
             break
         else:
             continue
-print(f"{Fore.BLUE}Using model {data["model"]}{Style.RESET_ALL}")
+print(f'{Fore.BLUE}Using model {data["model"]}{Style.RESET_ALL}')
 while(True):
     message = input(f"{Fore.GREEN}Your message: {Style.RESET_ALL}")
 
